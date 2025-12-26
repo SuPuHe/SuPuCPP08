@@ -6,7 +6,7 @@
 /*   By: omizin <omizin@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 15:49:41 by omizin            #+#    #+#             */
-/*   Updated: 2025/12/22 16:04:49 by omizin           ###   ########.fr       */
+/*   Updated: 2025/12/26 13:28:54 by omizin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 #include <vector>
 #include <algorithm>
 #include <exception>
+#include <list>
+#include <cstdlib>
+#include <ctime>
 
 class Span
 {
 	private:
 		unsigned int			_N;
 		std::vector<int>		_numbers;
-		long					_min;
-		long					_max;
 	public:
 		Span();
 		Span(unsigned int N);
@@ -34,4 +35,8 @@ class Span
 		void	addNumber(int number);
 		long	shortestSpan();
 		long	longestSpan();
+
+		template <typename It> void addIterators(It begin, It end);
 };
+
+#include "Span.tpp"
