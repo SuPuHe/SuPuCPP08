@@ -6,7 +6,7 @@
 /*   By: omizin <omizin@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:13:34 by omizin            #+#    #+#             */
-/*   Updated: 2025/12/26 13:46:14 by omizin           ###   ########.fr       */
+/*   Updated: 2026/04/06 12:21:47 by omizin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int erewrew()
 		original.addNumber(20);
 
 		Span copy = original;
-		copy.addNumber(30); // should throw
+		copy.addNumber(30);
 
 		std::cout << copy.longestSpan() << std::endl;
 	}
