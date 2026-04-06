@@ -6,7 +6,7 @@
 /*   By: omizin <omizin@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 15:51:43 by omizin            #+#    #+#             */
-/*   Updated: 2025/12/26 13:06:12 by omizin           ###   ########.fr       */
+/*   Updated: 2026/04/06 12:29:49 by omizin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ long	Span::shortestSpan()
 	std::vector<int> tmp(_numbers);
 	std::sort(tmp.begin(), tmp.end());
 
-	long shortest = static_cast<long>(tmp[1]) - static_cast<long>(tmp[0]);
+	long shortest = tmp[1] - tmp[0];
 	for(size_t i = 2; i < tmp.size(); i++){
-		long diff = static_cast<long>(tmp[i]) - static_cast<long>(tmp[i - 1]);
+		long diff = tmp[i] - tmp[i - 1];
 		if (diff < shortest)
 			shortest = diff;
 	}
@@ -59,5 +59,5 @@ long	Span::longestSpan()
 		throw std::length_error("Couldn't find span because of < 2 elements");
 
 	auto [min_it, max_it] = std::minmax_element(_numbers.begin(), _numbers.end());
-	return static_cast<long>(*max_it) - static_cast<long>(*min_it);
+	return *max_it - *min_it;
 }
